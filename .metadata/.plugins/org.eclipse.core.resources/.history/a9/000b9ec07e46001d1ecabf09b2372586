@@ -1,0 +1,29 @@
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class CaroServer {
+	public static void main(String[] args) throws IOException {
+		new CaroServer();
+	}
+
+	public CaroServer() throws IOException {
+		ServerSocket server = new ServerSocket(5000);
+		while(true) {
+			Socket soc = server.accept();
+			Process x = new Process(soc, this);
+			
+			x.start();
+		}
+	}
+}
+
+class Process extends Thread{
+	CaroServer server;
+	Socket soc;
+	public Process(Socket soc, CaroServer server) {
+		this.soc= soc;
+		this.server= server;
+	}
+	
+}

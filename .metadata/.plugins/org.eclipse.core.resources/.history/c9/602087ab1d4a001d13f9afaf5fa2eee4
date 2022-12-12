@@ -1,0 +1,51 @@
+import java.awt.event.*;
+
+import javax.swing.*;
+
+
+public class JoinTimSo extends JFrame{
+    public static void main(String args[]){
+        new JoinTimSo();
+    }
+    JFrame fr= new JFrame();
+    public JoinTimSo(){
+        fr.setTitle("Join tim so");
+        fr.setSize(400, 300);
+        fr.setDefaultCloseOperation(3);
+        fr.setLayout(null);
+
+        JLabel lb= new JLabel("Nhap lenh: ");
+        lb.setBounds(50, 50, 100, 50);
+        
+        JTextField tf= new JTextField();
+        tf.setBounds(100, 50, 200, 50);
+        
+        JButton btn= new JButton("Sent");
+        btn.setBounds(100, 125, 200, 50);
+        
+        JLabel msg= new JLabel();
+        msg.setBounds(50, 200, 300, 50);
+        
+        
+        btn.addActionListener((ActionListener) new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (tf.getText().equals("")) 
+                    msg.setText("Input can't be empty");
+                else
+                if (tf.getText().equals("want to join")){
+                    new TimSoClient();
+                    fr.dispose();
+                }
+                else
+                	msg.setText("Nhap lenh: \'want to join\' de tham gia tro choi!");
+            }
+        });
+
+        
+        fr.add(lb);   fr.add(tf);
+        fr.add(btn); 
+        fr.add(msg);
+        fr.setVisible(true);
+    }
+}

@@ -1,0 +1,10 @@
+
+public class CaroSever {
+	public static void main(String[] args) {
+		new CaroSever();
+	}
+
+	public CaroServer() {
+		
+	}
+}

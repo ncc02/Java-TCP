@@ -1,0 +1,24 @@
+import java.io.*;
+import java.net.*;
+import javax.swing.*;
+
+public class CaroClient extends JFrame {
+
+	public static void main(String[] args) throws UnknownHostException, IOException {
+		new CaroClient();
+
+	}
+
+	DataInputStream dis;
+	DataOutputStream dos;
+	
+	
+	public CaroClient() throws UnknownHostException, IOException {
+		this.setTitle("Co caro eclipse");
+		
+		Socket soc= new Socket("192.168.1.4", 5000);
+		dis	= new DataInputStream(soc.getInputStream());
+		dos	= new DataOutputStream(soc.getOutputStream());
+		
+	}
+}

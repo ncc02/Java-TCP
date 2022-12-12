@@ -1,0 +1,2 @@
+INDEX VERSION 1.131+C:\Users\cuong\OneDrive\Documents\nam3\hk1\LapTrinhMang\eclipse-workspace\Caro\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index

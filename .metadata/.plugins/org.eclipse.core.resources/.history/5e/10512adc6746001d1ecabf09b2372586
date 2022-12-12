@@ -1,0 +1,43 @@
+import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import javax.swing.JFrame;
+
+
+public class CarroOffline extends JFrame{
+    public static void main(String args[]){
+        new CarroOffline();
+    }
+
+    int n= 15;
+    int s= 30;
+    int of= 50;
+    List<Point> dadanh= new List();
+    
+    public CarroOffline(){
+        this.setTitle("Co caro");
+        this.setSize(n*s + 2*of, n*s+2*of);
+        this.setDefaultCloseOperation(3);
+        this.addMouseListener((MouseListener) this);
+        this.setVisible(true);
+    }
+    
+//    public void paint(Graphics g) {
+//    	g.setColor(Color.DARK_GRAY);
+//    	g.fillRect(0, 0, this.getWidth(), this.)
+//    }
+    
+    public void mouseClicked(MouseEvent e) {
+    	int x= e.getX();
+    	int y= e.getY();
+    	
+    	if (x < of || x > of + s*n) return;
+    	if (y < of || y > of + s*n) return;
+    	
+    	int ix = (x - of) / s;
+    	int iy = (y - of) / s;
+    	
+    	
+    }
+}

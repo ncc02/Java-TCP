@@ -1,0 +1,10 @@
+package GuiData2TienTrinh;
+
+public class P2 extends JFrame{
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

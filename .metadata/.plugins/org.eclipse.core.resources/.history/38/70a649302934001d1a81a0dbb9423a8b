@@ -1,0 +1,16 @@
+package GuiData2TienTrinh;
+
+import java.io.PipedOutputStream;
+
+import javax.swing.*;
+
+public class P1 extends JFrame {
+	public P1(PipedOutputStream pos) {
+		this.setTitle("Tien trinh 1");
+		this.setSize(300, 200);
+		this.setDefaultCloseOperation(3);
+		
+		JButton b=new JButton("Send");
+		b.Add
+	}
+}

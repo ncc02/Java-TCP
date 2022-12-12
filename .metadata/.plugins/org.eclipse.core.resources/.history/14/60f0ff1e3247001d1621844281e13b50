@@ -1,0 +1,63 @@
+import java.awt.*;
+import java.awt.event.*;
+import java.io.*;
+import java.net.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.*;
+
+public class CaroClient extends JFrame implements Runnable {
+
+	public static void main(String[] args) throws UnknownHostException, IOException {
+		new CaroClient();
+
+	}
+
+	DataInputStream dis;
+	DataOutputStream dos;
+	int n= 15;
+	int s= 50;
+	int of= 50;
+	List<Point> visited= new ArrayList<Point>();
+	
+	public CaroClient() throws UnknownHostException, IOException {
+		this.setTitle("Co caro eclipse");
+		this.setSize(n*s + of, n*s + of);
+		this.setDefaultCloseOperation(3);
+		//this.addMouseListener((MouseListener) this);
+		
+//		Socket soc= new Socket("192.168.1.4", 5000);
+//		dis	= new DataInputStream(soc.getInputStream());
+//		dos	= new DataOutputStream(soc.getOutputStream());
+//		
+		new Thread(this).start();
+		
+		this.setVisible(true);
+	}
+	
+	public void run() {
+//		while(true) {
+//			try {
+//				String s= dis.readUTF();
+//				int ix= Integer.parseInt(s.split(",")[0]);
+//				int iy= Integer.parseInt(s.split(",")[1]);
+//				visited.add(new Point(ix, iy));
+				
+				this.repaint();
+//			}catch(Exception e) {}
+//		}
+	}
+	
+	public void paint(Graphics g) {
+		g.setColor(Color.black);
+		g.fillRect(0, 0, this.getWidth(), this.getHeight()); //ve hinh toa do 0,0 chieu dai va cao
+		
+		for(int i=0; i<=15; i++) {
+			g.drawLine(of, of+i*s, of+n*s, of+i*s);
+		}
+	}
+}
+
+
+
